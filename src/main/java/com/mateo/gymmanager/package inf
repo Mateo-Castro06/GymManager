@@ -1,0 +1,211 @@
+==========================
+PAQUETES DEL PROYECTO
+GymManager
+==========================
+
+config/
+-----------
+Contiene todas las configuraciones de Spring.
+
+Ejemplos:
+- Seguridad (Spring Security)
+- Beans personalizados
+- Configuración de CORS
+- Configuración de Swagger/OpenAPI
+- Configuración de ModelMapper o MapStruct
+- Configuración de Jackson
+
+Nunca debe contener lógica de negocio.
+
+
+controller/
+---------------
+Es la capa que recibe las peticiones HTTP.
+
+Responsabilidades:
+- Recibir solicitudes del cliente.
+- Validar la entrada con @Valid.
+- Llamar al Service.
+- Devolver ResponseEntity.
+
+Nunca debe acceder directamente al Repository.
+
+Ejemplo:
+POST /users
+GET /memberships
+
+
+dto/
+-------
+Data Transfer Objects.
+
+Se utilizan para enviar y recibir información entre el cliente y la API.
+
+Tipos:
+- Request DTO
+- Response DTO
+
+Nunca representan directamente las tablas de la base de datos.
+
+Ejemplo:
+CreateUserRequest
+UserResponse
+
+
+entity/
+----------
+Representan las tablas de la base de datos.
+
+Aquí van:
+- @Entity
+- @Table
+- @Id
+- Relaciones (@OneToMany, @ManyToOne...)
+
+No deben contener lógica de negocio compleja.
+
+Ejemplo:
+User
+Membership
+Payment
+
+
+exception/
+--------------
+Centraliza el manejo de errores.
+
+Aquí van:
+- Excepciones personalizadas.
+- GlobalExceptionHandler (@RestControllerAdvice)
+
+Ejemplos:
+UserNotFoundException
+MembershipExpiredException
+
+
+mapper/
+-----------
+Convierte Entity ↔ DTO.
+
+Responsabilidad:
+- Entity → Response DTO
+- Request DTO → Entity
+
+Puede hacerse manualmente o con MapStruct.
+
+No debe contener lógica de negocio.
+
+
+repository/
+---------------
+Es la capa que habla con la base de datos.
+
+Extiende normalmente:
+
+JpaRepository<Entity, ID>
+
+Solo contiene consultas.
+
+Ejemplo:
+UserRepository
+MembershipRepository
+
+
+service/
+------------
+Contiene las interfaces de los servicios.
+
+Aquí se define QUÉ hace el sistema.
+
+Ejemplo:
+
+UserService
+
+- createUser()
+- deleteUser()
+- updateUser()
+- login()
+
+No contiene implementación.
+
+
+service/impl/
+-----------------
+Implementación de los servicios.
+
+Aquí vive TODA la lógica del negocio.
+
+Ejemplos:
+- Registrar usuario
+- Renovar membresía
+- Cobrar pagos
+- Validaciones de negocio
+- Reglas del gimnasio
+
+Es el corazón de la aplicación.
+
+
+security/
+-------------
+Todo lo relacionado con autenticación y autorización.
+
+Ejemplos:
+- JWT
+- Filtros
+- UserDetailsService
+- Configuración de Spring Security
+- Roles
+- Permisos
+
+No lo utilizaremos al inicio.
+
+
+validation/
+---------------
+Validaciones personalizadas.
+
+Ejemplos:
+- Email único
+- Documento único
+- Contraseña segura
+- Edad mínima
+
+Aquí pueden existir anotaciones propias como:
+
+@UniqueEmail
+@StrongPassword
+
+
+==========================
+REGLAS DEL PROYECTO
+==========================
+
+Controller
+    ↓
+Service
+    ↓
+Repository
+    ↓
+Base de datos
+
+Nunca:
+
+Controller → Repository
+
+Nunca:
+
+Controller → Entity
+
+Siempre:
+
+Controller → DTO
+
+La lógica del negocio vive únicamente en Service.
+
+Los Repository solo consultan la base de datos.
+
+Los Mapper solo convierten objetos.
+
+Las Entity representan tablas.
+
+Los DTO representan información que entra o sale de la API.
