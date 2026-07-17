@@ -1,3 +1,21 @@
+server:
+  port: 8080
+
 spring:
   application:
     name: gymmanager
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/gymmanager
+    username: gymmanager
+    password: GymManager2026
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+    properties:
+      hibernate:
+        format_sql: true
