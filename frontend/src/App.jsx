@@ -1,6 +1,7 @@
-function App(){
-    return (
-      <h1>GymManager</h1>
-    );
+import AppRoutes from "./routes/AppRoutes";
+
+function App() {
+    return <AppRoutes />;
 }
+
 export default App;
