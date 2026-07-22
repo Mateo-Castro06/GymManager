@@ -1,4 +1,6 @@
 package com.mateo.gymmanager.entity.customer;
 
-public class Customer {
+import com.mateo.gymmanager.entity.person.Person;
+
+public class Customer extends Person {
 }
