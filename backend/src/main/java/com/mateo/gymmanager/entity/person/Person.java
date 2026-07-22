@@ -27,7 +27,7 @@ public abstract class Person {
     @Column(nullable = false)
     protected String lastName;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     protected String dni;
 
     @Column(nullable = false)
