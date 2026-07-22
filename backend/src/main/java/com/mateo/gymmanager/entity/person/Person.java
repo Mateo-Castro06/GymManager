@@ -1,5 +1,6 @@
 package com.mateo.gymmanager.entity.person;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

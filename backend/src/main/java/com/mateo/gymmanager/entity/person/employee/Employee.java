@@ -1,4 +1,4 @@
-package com.mateo.gymmanager.entity.employee;
+package com.mateo.gymmanager.entity.person.employee;
 
 import com.mateo.gymmanager.entity.person.Person;
 import jakarta.persistence.Column;

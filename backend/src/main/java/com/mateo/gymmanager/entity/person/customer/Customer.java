@@ -1,4 +1,4 @@
-package com.mateo.gymmanager.entity.customer;
+package com.mateo.gymmanager.entity.person.customer;
 
 import com.mateo.gymmanager.entity.person.Person;
 
