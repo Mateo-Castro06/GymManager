@@ -18,7 +18,7 @@ import java.util.List;
 public class Owner extends Person {
 
     @OneToOne
-    @JoinColumn(name = "account_id")
+    @JoinColumn(name = "account_id", nullable = false)
     private UserAccount account;
 
     @OneToMany(mappedBy = "owner")

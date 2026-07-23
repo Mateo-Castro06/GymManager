@@ -17,7 +17,7 @@ import java.time.LocalDate;
 public abstract class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long idPerson;
+    protected long idPerson;
 
     @Column(nullable = false)
     protected String firstName;

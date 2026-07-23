@@ -19,7 +19,7 @@ public class Gym {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long gymId;
 
     @Column(nullable = false)
     private String name;

@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,7 +22,7 @@ public class Plan {
     private String planName;
 
     @Column(nullable = false)
-    private int monthlyPrice;
+    private BigDecimal monthlyPrice;
 
     @Column(nullable = false)
     private boolean multiBranch;
