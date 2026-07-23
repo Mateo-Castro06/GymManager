@@ -1,4 +1,4 @@
-package com.mateo.gymmanager.entity.gym;
+package com.mateo.gymmanager.entity.account;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,19 +9,19 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "plan")
-public class Plan {
+@Table(name = "user_account")
+public class UserAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long planId;
+    private long userAccountId;
 
     @Column(nullable = false, unique = true)
-    private String planName;
+    private String username;
 
     @Column(nullable = false)
-    private int monthlyPrize;
+    private String password;
 
-
-
+    @Column(nullable = false)
+    private String email;
 }

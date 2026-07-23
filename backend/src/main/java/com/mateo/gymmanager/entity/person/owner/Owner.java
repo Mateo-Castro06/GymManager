@@ -1,12 +1,10 @@
 package com.mateo.gymmanager.entity.person.owner;
 
+import com.mateo.gymmanager.entity.account.UserAccount;
 import com.mateo.gymmanager.entity.gym.Gym;
 import com.mateo.gymmanager.entity.gym.Subscription;
 import com.mateo.gymmanager.entity.person.Person;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,11 +18,9 @@ import java.util.List;
 @Table(name = "owner")
 public class Owner extends Person {
 
-    @Column(nullable = false, unique = true)
-    private String username;
-
-    @Column(nullable = false)
-    private String password;
+    @OneToOne
+    @JoinColumn(name = "account_id")
+    private UserAccount account;
 
     @OneToMany(mappedBy = "owner")
     private List<Subscription> subscriptions;
