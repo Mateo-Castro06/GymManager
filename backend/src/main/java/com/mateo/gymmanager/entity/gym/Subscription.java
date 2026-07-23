@@ -11,15 +11,19 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "membership")
+@Table(name = "subscription")
 public class Subscription {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long subscriptionId;
+
     @ManyToOne
-    @JoinColumn(name = "gym_id")
+    @JoinColumn(name = "gym_id", nullable = false)
     private Gym gym;
 
     @ManyToOne
-    @JoinColumn(name = "plan_id")
+    @JoinColumn(name = "plan_id", nullable = false)
     private Plan plan;
 
     @Enumerated(EnumType.STRING)
