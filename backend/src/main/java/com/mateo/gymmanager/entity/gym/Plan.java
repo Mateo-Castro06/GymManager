@@ -20,8 +20,29 @@ public class Plan {
     private String planName;
 
     @Column(nullable = false)
-    private int monthlyPrize;
+    private int monthlyPrice;
 
+    @Column(nullable = false)
+    private boolean multiBranch;
 
+    @Column(nullable = false)
+    private int maxGyms;
 
+    @Column(nullable = false)
+    private int maxEmployees;
+
+    @Column(nullable = false)
+    private int maxCustomers;
+
+    @Column(nullable = false)
+    private boolean advancedReports;
+
+    @Column(nullable = false)
+    private boolean exportToExcel; //funcionalidad para GymManager 2.0
+
+    @Column(nullable = false)
+    private boolean automaticBackups; //funcionalidad para GymManager 2.0
+
+    @Column(nullable = false)
+    private boolean prioritySupportEnabled;
 }

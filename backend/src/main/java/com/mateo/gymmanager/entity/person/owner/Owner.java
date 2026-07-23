@@ -2,7 +2,6 @@ package com.mateo.gymmanager.entity.person.owner;
 
 import com.mateo.gymmanager.entity.account.UserAccount;
 import com.mateo.gymmanager.entity.gym.Gym;
-import com.mateo.gymmanager.entity.gym.Subscription;
 import com.mateo.gymmanager.entity.person.Person;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,9 +20,6 @@ public class Owner extends Person {
     @OneToOne
     @JoinColumn(name = "account_id")
     private UserAccount account;
-
-    @OneToMany(mappedBy = "owner")
-    private List<Subscription> subscriptions;
 
     @OneToMany(mappedBy = "owner")
     private List<Gym> gyms;
