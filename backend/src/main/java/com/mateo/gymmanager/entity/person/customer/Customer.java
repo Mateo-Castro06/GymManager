@@ -1,5 +1,6 @@
 package com.mateo.gymmanager.entity.person.customer;
 
+import com.mateo.gymmanager.entity.gym.Gym;
 import com.mateo.gymmanager.entity.membership.Membership;
 import com.mateo.gymmanager.entity.person.Person;
 import jakarta.persistence.*;
@@ -16,6 +17,10 @@ import java.util.List;
 @Entity
 @Table(name = "customer")
 public class Customer extends Person {
+
+    @ManyToOne
+    @JoinColumn(name = "gym_id", nullable = false)
+    private Gym gym;
 
     @OneToMany(mappedBy = "customer")
     private List<Membership> memberships;
