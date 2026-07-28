@@ -12,4 +12,8 @@ import lombok.Setter;
 @Entity
 @Table(name = "trainer")
 public class Trainer extends  Employee{
+    @Override
+    public EmployeeRol getRole() {
+        return EmployeeRol.TRAINER;
+    }
 }

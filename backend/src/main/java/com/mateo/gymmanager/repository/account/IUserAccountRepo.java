@@ -1,4 +1,4 @@
-package com.mateo.gymmanager.repository.person;
+package com.mateo.gymmanager.repository.account;
 
 import com.mateo.gymmanager.entity.account.UserAccount;
 import org.springframework.data.jpa.repository.JpaRepository;

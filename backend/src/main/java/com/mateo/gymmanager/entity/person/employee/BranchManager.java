@@ -25,4 +25,9 @@ public class BranchManager extends Employee {
     @OneToOne
     @JoinColumn(name = "gym_id", nullable = false)
     private Gym gym;
+
+    @Override
+    public EmployeeRol getRole() {
+        return EmployeeRol.BRANCH_MANAGER;
+    }
 }
