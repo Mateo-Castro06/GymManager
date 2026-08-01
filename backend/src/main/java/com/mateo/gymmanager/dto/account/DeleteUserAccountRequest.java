@@ -9,8 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateUserAccountRequest {
-    private String username;
-    private String password;
-    private String email;
+public class DeleteUserAccountRequest {
+    private Long branchManagerId;
+    private Long ownerId;
 }

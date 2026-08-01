@@ -10,6 +10,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserAccountResponse {
-    private long userAccountId;
+    private Long userAccountId;
     private String username;
 }
