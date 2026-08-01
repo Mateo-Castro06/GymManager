@@ -27,7 +27,7 @@ public class BranchManager extends Employee {
     private Gym gym;
 
     @Override
-    public EmployeeRol getRole() {
-        return EmployeeRol.BRANCH_MANAGER;
+    public EmployeeRole getRole() {
+        return EmployeeRole.BRANCH_MANAGER;
     }
 }

@@ -29,6 +29,6 @@ public abstract class Employee extends Person {
     @JoinColumn(name = "gym_id")
     protected Gym gym;
 
-    public abstract EmployeeRol getRole();
+    public abstract EmployeeRole getRole();
 
 }

@@ -1,7 +1,6 @@
-package com.mateo.gymmanager.dto.person.owner;
+package com.mateo.gymmanager.dto.person.employee;
 
-import com.mateo.gymmanager.dto.account.CreateUserAccountRequest;
-import jakarta.validation.Valid;
+import com.mateo.gymmanager.entity.person.employee.EmployeeRole;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -15,8 +14,8 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateOwnerRequest {
 
+public class CreateEmployeeRequest {
     @NotBlank
     private String firstName;
 
@@ -31,7 +30,17 @@ public class CreateOwnerRequest {
     @NotNull
     private LocalDate birthDate;
 
-    @Valid
     @NotNull
-    private CreateUserAccountRequest ownerAccount;
+    private LocalDate hireDate;
+
+    @NotNull
+    private Integer salary;
+
+    private LocalDate dismissDate;
+
+    @NotNull
+    private Long gymId;
+
+    @NotNull
+    private EmployeeRole role;
 }

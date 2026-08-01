@@ -1,4 +1,4 @@
-package com.mateo.gymmanager.dto.person.owner;
+package com.mateo.gymmanager.dto.person.employee.branchmanager;
 
 import com.mateo.gymmanager.dto.account.CreateUserAccountRequest;
 import jakarta.validation.Valid;
@@ -15,8 +15,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateOwnerRequest {
-
+public class CreateBranchManagerRequest {
     @NotBlank
     private String firstName;
 
@@ -31,7 +30,20 @@ public class CreateOwnerRequest {
     @NotNull
     private LocalDate birthDate;
 
+    @NotNull
+    private LocalDate hireDate;
+
+    @NotNull
+    private Integer salary;
+
+    private LocalDate dismissDate;
+
+    @NotNull
+    private Long gymId;
+
     @Valid
     @NotNull
     private CreateUserAccountRequest ownerAccount;
+
+
 }

@@ -13,7 +13,7 @@ import lombok.Setter;
 @Table(name = "trainer")
 public class Trainer extends  Employee{
     @Override
-    public EmployeeRol getRole() {
-        return EmployeeRol.TRAINER;
+    public EmployeeRole getRole() {
+        return EmployeeRole.TRAINER;
     }
 }
