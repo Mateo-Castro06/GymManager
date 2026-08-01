@@ -16,7 +16,7 @@ public class Subscription {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long subscriptionId;
+    private Long subscriptionId;
 
     @ManyToOne
     @JoinColumn(name = "gym_id", nullable = false)

@@ -16,7 +16,7 @@ public class MembershipPlan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long membershipPlanId;
+    private Long membershipPlanId;
 
     @Column(nullable = false)
     private String name;

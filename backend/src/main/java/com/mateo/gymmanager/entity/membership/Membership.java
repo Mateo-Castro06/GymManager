@@ -17,7 +17,7 @@ public class Membership {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long membershipId;
+    private Long membershipId;
 
     @ManyToOne
     @JoinColumn(name = "customer_id" ,nullable = false)
