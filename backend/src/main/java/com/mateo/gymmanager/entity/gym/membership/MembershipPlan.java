@@ -1,5 +1,6 @@
 package com.mateo.gymmanager.entity.gym.membership;
 
+import com.mateo.gymmanager.entity.gym.Gym;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +18,10 @@ public class MembershipPlan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long membershipPlanId;
+
+    @ManyToOne
+    @JoinColumn(name = "gym_id", nullable = false)
+    private Gym gym;
 
     @Column(nullable = false)
     private String name;
@@ -40,5 +45,5 @@ public class MembershipPlan {
     private boolean lockerAccess;
 
     @Column(nullable = false)
-    private boolean active; //para gymManagerV2
+    private boolean active;
 }

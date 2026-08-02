@@ -1,5 +1,6 @@
 package com.mateo.gymmanager.entity.gym;
 
+import com.mateo.gymmanager.entity.gym.membership.MembershipPlan;
 import com.mateo.gymmanager.entity.person.customer.Customer;
 import com.mateo.gymmanager.entity.person.employee.BranchManager;
 import com.mateo.gymmanager.entity.person.employee.Employee;
@@ -38,4 +39,7 @@ public class Gym {
 
     @OneToMany(mappedBy = "gym")
     private List<Employee> employees;
+
+    @OneToMany(mappedBy = "gym")
+    private List<MembershipPlan> membershipPlans;
 }

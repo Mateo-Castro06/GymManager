@@ -20,6 +20,4 @@ public class CreateGymRequest {
     @NotNull
     private Long ownerId;
 
-    @NotNull
-    private Long subscriptionId;
 }
