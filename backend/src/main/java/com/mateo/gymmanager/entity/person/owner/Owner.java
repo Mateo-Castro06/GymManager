@@ -23,4 +23,7 @@ public class Owner extends Person {
 
     @OneToMany(mappedBy = "owner")
     private List<Gym> gyms;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Subscription> subscriptions;
 }

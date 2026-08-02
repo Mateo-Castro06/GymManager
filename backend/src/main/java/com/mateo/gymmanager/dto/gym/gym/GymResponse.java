@@ -1,4 +1,4 @@
-package com.mateo.gymmanager.dto.gym;
+package com.mateo.gymmanager.dto.gym.gym;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateGymRequest {
+
+public class GymResponse {
 
 }

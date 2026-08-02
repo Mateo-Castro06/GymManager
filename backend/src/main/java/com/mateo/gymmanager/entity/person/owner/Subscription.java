@@ -1,5 +1,6 @@
-package com.mateo.gymmanager.entity.gym;
+package com.mateo.gymmanager.entity.person.owner;
 
+import com.mateo.gymmanager.entity.gym.Gym;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,8 +20,8 @@ public class Subscription {
     private Long subscriptionId;
 
     @ManyToOne
-    @JoinColumn(name = "gym_id", nullable = false)
-    private Gym gym;
+    @JoinColumn(name = "owner_id", nullable = false)
+    private Owner owner;
 
     @ManyToOne
     @JoinColumn(name = "plan_id", nullable = false)

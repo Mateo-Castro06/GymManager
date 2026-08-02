@@ -1,4 +1,4 @@
-package com.mateo.gymmanager.entity.membership;
+package com.mateo.gymmanager.entity.gym.membership;
 
 import jakarta.persistence.*;
 import lombok.Getter;

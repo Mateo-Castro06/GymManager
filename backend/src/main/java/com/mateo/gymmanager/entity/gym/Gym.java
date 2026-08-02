@@ -4,6 +4,7 @@ import com.mateo.gymmanager.entity.person.customer.Customer;
 import com.mateo.gymmanager.entity.person.employee.BranchManager;
 import com.mateo.gymmanager.entity.person.employee.Employee;
 import com.mateo.gymmanager.entity.person.owner.Owner;
+import com.mateo.gymmanager.entity.person.owner.Subscription;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,9 +36,6 @@ public class Gym {
     @OneToMany(mappedBy = "gym")
     private List<Customer> customers;
 
-    @OneToMany(mappedBy = "gym")
-    private List<Subscription> subscriptions;
-    // Gym
     @OneToMany(mappedBy = "gym")
     private List<Employee> employees;
 }

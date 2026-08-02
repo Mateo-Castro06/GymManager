@@ -1,7 +1,7 @@
 package com.mateo.gymmanager.entity.person.customer;
 
 import com.mateo.gymmanager.entity.gym.Gym;
-import com.mateo.gymmanager.entity.membership.Membership;
+import com.mateo.gymmanager.entity.gym.membership.Membership;
 import com.mateo.gymmanager.entity.person.Person;
 import jakarta.persistence.*;
 import lombok.Getter;
